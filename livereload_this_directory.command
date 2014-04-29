@@ -1,0 +1,1 @@
+livereloadx %~dp0

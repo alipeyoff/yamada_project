@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+/* ===========================================================
+
+   [Modules]
+
+=========================================================== */
+
+/* -----------------------------------------------------------
+    01. Headings
+----------------------------------------------------------- */
+
+.hdg-02 {
+	@include fontsize(22);
+	margin-bottom: 15px;
+    padding-left: 25px;
+    //background: #eee;
+    border-radius: 4px;
+    position: relative;
+    &:before,&:after{
+        width: 12px;
+        height: 12px;
+        content: "";
+        display: block;
+        position: absolute;
+        border: 1px solid #fff;
+    }
+    &:before {
+        left: 0;
+        top: 10px;
+        background-color: $color-02;
+    }
+    &:after {
+        left: 5px;
+        top: 5px;
+        background-color: blue;
+    }
+}
+
+/* -----------------------------------------------------------
+    02. section
+----------------------------------------------------------- */
+
+.sec-01{
+	margin-bottom: 20px;
+}
+
+////////////////////////////////////////////////////
+@media screen and (max-width:768px){
+    .sec-01,.box-youtube{
+        padding: 0 10px;
+    }
+}
+
+/* -----------------------------------------------------------
+    03. banner
+----------------------------------------------------------- */
+
+%base-type-01 {
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+    padding: 4px;
+    a{
+        @include fontsize(18);
+        display: block;
+        padding: 20px;
+        &:hover {
+            color: yellow;
+            text-shadow: 1px 2px 2px #000;
+            transition: all 0.3s ease 0s;
+            transform: scale(1.2);
+        }
+    }
+}
+
+.bnr-type-01 {
+    @extend %base-type-01;
+    background-color: #31AB18;
+    a{
+        color: #fff;
+        background-color: #31AB18;
+        border: 1px solid #fff;
+    }
+}
+
+.bnr-type-02 {
+    @extend %base-type-01;
+    background-color: #F8B747;
+    a{
+        color: #fff;
+        background-color: #F8B747;
+        border: 1px dashed #fff;
+    }
+}
+
+.bnr-type-03 {
+    @extend %base-type-01;
+    background-color: #29A7E1;
+    a{
+        color: #fff;
+        background-color: #29A7E1;
+        border: 1px dotted #fff;
+    }
+}
+
+/* -----------------------------------------------------------
+    04. Column
+----------------------------------------------------------- */
+
+.col-3 {
+    @include clearfix;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    .col {
+        width: $main-grid-col03;
+        float: left;
+        margin-right: 1.5%;
+        background-color: $color-03;
+        //for-pc
+        .txt-pc {
+            display:  block;
+        }
+    }
+    .col:last-child {
+        margin-right: 0;
+    }
+}
+
+////////////////////////////////////////////////////
+@media screen and (max-width:480px){
+.col-3 .col .txt-pc {
+            display: none;
+        }
+}
+
+/* -----------------------------------------------------------
+    04. Table
+----------------------------------------------------------- */
+
+/* -----------------------------------------------------------
+    06. Image
+----------------------------------------------------------- */
+
+/* -----------------------------------------------------------
+    07. Text
+----------------------------------------------------------- */
+
+/* -----------------------------------------------------------
+    08. Ajust
+----------------------------------------------------------- */
+
+.mod-mb-non{margin-bottom:0!important;}
+.mod-mb-5{margin-bottom:5px!important;}
+.mod-mb-10{margin-bottom:10px!important;}
+.mod-mb-20{margin-bottom:20px!important;}
+.mod-pd-non{padding: 0!important;}
+.align-L{text-align: left!important;}
+.align-C{text-align: center!important;}
+.align-R{text-align: right!important;}
+.align-T{vertical-align: top!important;}
+.align-M{vertical-align: middle!important;}
+.align-B{vertical-align: bottom!important;}

@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+/* ===========================================================
+
+   Footer
+
+=========================================================== */
+
+footer {
+	border-top: 2px solid $color-02;
+	padding: 10px 0;
+	width: 100%;
+	@include background(linear-gradient(top, $color-02 0%, blue 100%));
+	p {
+		color: #fff;
+		margin: 0;
+		text-align: center;
+		@include fontsize(14);
+	}
+}
+
+////////////////////////////////////////////////////
+@media screen and (max-width:480px){
+	footer p {
+		@include fontsize(12);
+		letter-spacing: -1px;
+	}
+}

@@ -1,0 +1,256 @@
+@charset "utf-8";
+
+/* ===========================================================
+
+   [header]
+
+=========================================================== */
+
+body{
+	@include background(linear-gradient(top, $color-02 10%, #fff 30%, #fff 100%));
+}
+
+#global-header {
+	//background-color: $color-02;
+	margin-bottom: 20px;
+}
+
+////////////////////////////////////////////////////
+@media screen and (max-width:768px){
+	body{
+		@include background(linear-gradient(top, $color-02 10%, #fff 15%, #fff 100%));
+	}
+
+	#global-header {
+		background-color: $color-02;
+	}
+}
+
+.page-title {
+	background-color: $color-01;
+	span {
+		color: #fff;
+		margin: 0 auto;
+		padding: 2px 0;
+		width: 960px;
+		display: block;
+	}
+}
+
+.inner-header {
+	margin: 0 auto;
+	width: 960px;
+	position: relative;
+}
+
+////////////////////////////////////////////////////
+@media screen and (max-width:960px){
+.page-title {
+	span {
+		width: 100%;
+	}
+}
+
+.inner-header {
+	width: 100%;
+}
+
+}
+
+////////////////////////////////////////////////////
+@media screen and (max-width:768px){
+	.page-title span {
+		display: none;
+	}
+}
+
+.logo a{
+	display: block;
+	color: $color-01;
+	@include fontsize(47);
+	line-height: 1.2;
+	margin: 10px 0 15px;
+	font-weight: bold;
+	text-shadow: 2px 1px 1px #fff;
+	letter-spacing: 0.3em;
+	span {
+		display: block;
+		@include fontsize(14);
+		letter-spacing: 0em;
+	}
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.utility {
+	margin: 0 auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	@include fontsize(14);
+	li {
+		display: inline-block;
+		padding: 0 5px;
+		letter-spacing: normal;
+		&:first-child {
+			border-right: 1px solid $color-01;
+			padding-right: 10px;
+		}
+	}
+	a {
+		color: $color-01;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
+
+.list-sns {
+	width: 960px;
+	margin: -50px auto 20px;
+	text-align: right;
+	letter-spacing: -.40em;
+	li {
+		display: inline-block;
+		letter-spacing: normal;
+		margin-right: 10px;
+		line-height: 1.5;
+	}
+	i{
+		box-shadow: 1px 2px 1px $color-01;
+		@include fontsize(20);
+		color: #fff;
+		border-radius: 50%;
+		padding: 4px 2px;
+	}
+
+	i.fa-twitter{background-color: #37C6FA;}
+	i.fa-facebook{background-color: #44619D;};
+	i.fa-google-plus{background-color: #B83324;};
+}
+
+////////////////////////////////////////////////////
+@media screen and (max-width:540px){
+	.logo a{
+		text-align: center;
+	}
+	.utility {
+		margin: 0 auto 10px;
+		position: static;
+		text-align: center;
+		display: none;
+	}
+
+	.list-sns {
+	display: none;
+	margin: 0 auto 20px;
+	text-align: center;
+		i{
+			box-shadow: 1px 2px 1px $color-01;
+			@include fontsize(24);
+			color: #fff;
+			border-radius: 50%;
+			padding: 4px 2px;
+		}
+	}
+
+}
+
+.global-nav {
+	@include background(linear-gradient(top, #efeded 10%, #c6c4c4 100%));
+	border-bottom: 2px solid $color-02;
+	border-top:2px solid #ddd;
+}
+
+.global-nav #list-global-nav {
+	width: 960px;
+	margin: 0 auto;
+	display: table;
+	border-left: 1px solid $color-03;
+	border-right: 1px solid #fff;
+	li{
+		display: table-cell;
+	}
+	a{
+		padding: 15px;
+		display: block;
+		text-align: center;
+		color: $color-01;
+		border-left: 1px solid #fff;
+		border-right: 1px solid $color-03;
+		transition: all 1s ease 0s;
+		&:hover {
+			background-color: $color-02;
+			color : #fff;
+		}
+	}
+}
+
+#btn-sp-menu {
+	display: none;
+}
+
+////////////////////////////////////////////////////
+@media screen and (max-width:960px){
+	.list-sns {
+		width: 100%;
+	}
+
+	.global-nav #list-global-nav{
+		width: 100%;
+		@include fontsize(14);
+	}
+}
+
+////////////////////////////////////////////////////
+@media screen and (max-width:630px){
+	.global-nav #list-global-nav {
+	display: none;
+		li {
+			display: block;
+			border-top: 1px solid $color-01;
+		}
+		a{
+			text-align: left;
+			border: none;
+			position:  relative;
+			@include background(linear-gradient(top, #efeded 50% ,#c6c4c4 100%));
+			&:after {
+				@include fa;
+				@include fontsize(24);
+				content: "\f105";
+				position: absolute;
+				right: 15px;
+			}
+			&:hover {
+				color: $color-01;
+				@include background(linear-gradient(top, #efeded 50% ,#c6c4c4 100%));
+			}
+		}
+	}
+
+	#btn-sp-menu {
+		display: block;
+		margin: 0;
+		@include background(linear-gradient(top, #efeded 10%, #c6c4c4 100%));
+		 a{
+			display: block;
+			padding: 10px 15px 10px 2.5em;
+			color: $color-01;
+			position: relative;
+			&:before {
+				@include fa;
+				@include fontsize(24);
+				content: "\f0ca";
+				position: absolute;
+				left: 10px;
+			}
+		}
+	}
+}
+
+
+
+
+

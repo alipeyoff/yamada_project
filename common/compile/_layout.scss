@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+/* ===========================================================
+
+   [Layout]
+
+=========================================================== */
+
+/* -----------------------------------------------------------
+    01. Structure
+----------------------------------------------------------- */
+
+main {
+	width: 960px;
+	margin: 0 auto;
+	background-color: #fff;
+	position: relative;
+}
+
+////////////////////////////////////////////////////
+@media screen and (max-width:960px){
+	main {
+		width: 100%;
+	}
+}
+
+#btn-back-top {
+	text-align: right;
+	margin-bottom: 20px;
+	@include fontsize(16);
+	a{
+		@include background(linear-gradient(top, #FEC401 0%, #FFAD01 100%));
+		color: #fff;
+		border-radius: 10px;
+		position: relative;
+		display: inline-block;
+		text-align: right;
+		padding: 5px 20px 5px 35px;
+		&:after{
+			@include fa;
+			@include fontsize(20);
+			content: "\f062";
+			position: absolute;
+			left: 10px;
+		}
+	}
+}
+
+////////////////////////////////////////////////////
+@media screen and (max-width:960px){
+	#btn-back-top {
+		margin-right: 10px;
+	}
+}
+
+/* ===========================================================
+  for IE8
+=========================================================== */
+
+.no-borderradius #global-header {
+	background-color: $color-02;
+}
+
+.no-borderradius .link-blog {
+	margin-top: -1px;
+	border: 1px solid $color-02;
+}
+
+.no-borderradius .global-nav {
+	background-color: #efeded;
+}
+
+.no-borderrdaius main {
+	min-width: 960px
+}
+
+.no-borderradius #btn-back-top a{
+	background-color: #FFAD01;
+}
+
+.no-borderradius footer {
+	background-color: $color-02;
+}
